@@ -1,0 +1,21 @@
+{
+	  "family": "packt-windows",
+	  "containerDefinitions": [
+	    {
+	      "name": "packt_simple_app",
+	      "image": "microsoft/iis",
+	      "cpu": 100,
+	      "entryPoint":["powershell", "-Command"],
+	      "command":["New-Item -Path C:\\inetpub\\wwwroot\\index.html -Type file -Value '<html> <head> <title>Welcome    to Packt!!!</title> </head><body> <div style=text-align:center> <h1>Welcome to Packt!!!</h1><p>You have successfully created application in Amazon ECS Container.</p></body></html>'; C:\\ServiceMonitor.exe w3svc"],
+	      "portMappings": [
+	        {
+	          "protocol": "tcp",
+	          "containerPort": 80,
+	          "hostPort": 8080
+	        }
+	      ],
+	      "memory": 500,
+	      "essential": true
+	    }
+	  ]
+}

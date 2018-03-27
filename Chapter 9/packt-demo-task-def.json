@@ -1,0 +1,21 @@
+{
+  "taskDefinition": {
+    "family": "packt-demo",
+    "containerDefinitions": [
+      {
+        "name": "packt-demo",
+        "image": "499651321398.dkr.ecr.us-east-1.amazonaws.com/packt-demo",
+        "cpu": 100,
+        "portMappings": [
+          {
+            "protocol": "tcp",
+            "containerPort": 80,
+            "hostPort": 80
+          }
+        ],
+        "memory": 128,
+        "essential": true
+      }
+    ]
+  }
+}

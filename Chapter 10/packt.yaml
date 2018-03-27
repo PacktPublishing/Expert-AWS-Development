@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Outputs the time
+Resources:
+  PacktStack:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      Runtime: nodejs6.10
+      CodeUri: s3://codepipeline-us-east-1-514478780013/.
+      Events:
+        PacktCICDApi:
+          Type: Api
+          Properties:
+            Path: /PacktCICDResource
+            Method: GET

@@ -1,0 +1,11 @@
+version: 0.1
+phases:
+  install:
+    commands:
+      - npm install time
+      - aws cloudformation package --template-file packt.yaml --s3-bucket codepipeline-us-east-1-514478780013 --output-template-file OutputPackt.yaml
+
+artifacts:
+  type: zip
+  files:
+    - packt.yaml

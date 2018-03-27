@@ -1,0 +1,4 @@
+
+aws cloudformation package --template-file packt.yaml --output-template-file serverless-output.yaml --s3-bucket packtdemo
+
+aws cloudformation deploy --template-file serverless-output.yaml --stack-name PacktFunction --capabilities CAPABILITY_IAM

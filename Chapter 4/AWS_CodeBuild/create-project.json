@@ -1,0 +1,41 @@
+{
+  "name": "TestCodeBuild",
+  "description": "Description of CodeBuild",
+  "source": {
+    "type": "CODECOMMIT",
+    "location": "https://git-codecommit.us-east-1.amazonaws.com/v1/repos/DevRepo",
+    "buildspec": "",
+    "auth": {
+      "type": "OAUTH",
+      "resource": ""
+    }
+  },
+  "artifacts": {
+    "type": "S3",
+    "location": "mycognitobucket",
+    "path": "",
+    "namespaceType": "NONE",
+    "name": "myprj1",
+    "packaging": "NONE"    
+  },
+    "environment": {
+        "type": "LINUX_CONTAINER",
+        "image": "aws/codebuild/java:openjdk-6",
+        "computeType": "BUILD_GENERAL1_SMALL",
+        "environmentVariables": [
+            {
+                "name": "environmentVariable-name",
+                "value": "environmentVariable-value"
+            }
+        ]
+    },
+    "serviceRole": "arn:aws:iam::499651321398:role/service-role/codebuild-NewProject-service-role",
+    "timeoutInMinutes": 10,
+    "encryptionKey": "arn:aws:kms:us-east-1:499651321398:alias/aws/s3",
+    "tags": [
+        {
+            "key": "tag-key",
+            "value": "tag-value"
+        }
+    ]
+}

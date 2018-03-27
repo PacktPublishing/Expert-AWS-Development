@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="example.mobile.packt.com.s3transferutilityexample.MainActivity">
+
+    <Button
+        android:id="@+id/upload_file"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="File Upload to S3"
+        android:onClick="uploadFile"
+        />
+
+    <Button
+        android:id="@+id/downaload_file"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="File Download from S3"
+        app:layout_constraintLeft_toRightOf="@id/upload_file"
+        android:onClick="downloadFile"
+        />
+
+</android.support.constraint.ConstraintLayout>
